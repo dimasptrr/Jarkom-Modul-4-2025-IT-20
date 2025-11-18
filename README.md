@@ -141,3 +141,6 @@ Berikut adalah Tree yang digunakan dalam metode VLSM dengan CPT
 | Erebor      | 192.221.18.176/30      | 255.255.255.252    | 192.221.18.179     | 192.221.18.177 - 192.221.18.178   |
 | Utumno      | 192.221.18.180/30      | 255.255.255.252    | 192.221.18.183     | 192.221.18.181 - 192.221.18.182   |
 
+<img width="2747" height="1498" alt="CPT 2" src="https://github.com/user-attachments/assets/45bf1217-2637-4df9-85e5-c2c400d36086" />
+
+
