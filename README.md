@@ -19,7 +19,7 @@ Studi kasus ini mengimplementasikan tata kelola alamat IP untuk jaringan komplek
 
 Berikut adalah gambaran visual dari seluruh jaringan yang mencakup berbagai *host* dan *router* utama.
 
-![Topologi Jaringan "Middle Earth Network" yang mencakup 23 Subnet dan 3094 IP Host.](assets/topologiawal.png)
+![](assets/topologiawal.png)
 
 ---
 
