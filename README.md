@@ -23,7 +23,7 @@ Berikut adalah gambaran visual dari seluruh jaringan yang mencakup berbagai *hos
 
 ---
 
-## 2. Pembagian IP Menggunakan VLSM
+## 2. Pembagian IP
 
 VLSM digunakan untuk mengalokasikan alamat IP secara efisien, dimulai dari *subnet* dengan kebutuhan IP terbesar hingga terkecil (Link R2R). Total keseluruhan alokasi *host* berada pada *Network ID* **192.221.0.0/20**.
 
