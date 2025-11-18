@@ -10,6 +10,7 @@
 | Dimas Muhammad Putra  | 5027241076 |
 
 
+# CIDR
 ## 1. Gambaran Umum Topologi Jaringan
 
 Studi kasus ini mengimplementasikan tata kelola alamat IP untuk jaringan kompleks berdasarkan topologi "Middle Earth Network" dengan total kebutuhan **3094 IP Host**. Implementasi menggunakan dua metode utama untuk efisiensi dan perutean: **VLSM (Variable Length Subnet Masking)** dan **CIDR Aggregation**.
@@ -18,7 +19,7 @@ Studi kasus ini mengimplementasikan tata kelola alamat IP untuk jaringan komplek
 
 Berikut adalah gambaran visual dari seluruh jaringan yang mencakup berbagai *host* dan *router* utama.
 
-![Topologi Jaringan "Middle Earth Network" yang mencakup 23 Subnet dan 3094 IP Host.](Screenshot%202025-11-13%20184041.png)
+![Topologi Jaringan "Middle Earth Network" yang mencakup 23 Subnet dan 3094 IP Host.](assets/topologiawal.png)
 
 ---
 
@@ -56,30 +57,21 @@ CIDR Aggregation dilakukan untuk menggabungkan *subnet* yang berdekatan menjadi 
 
 Berikut adalah bagan pohon yang menunjukkan bagaimana *subnet* dikelompokkan dan diagregasi:
 
-![Bagan Pohon CIDR Aggregation yang menunjukkan proses penggabungan subnet secara hierarkis.](Screenshot%202025-11-15%20063141.png)
+![](assets/treecidr.png)
 
 ### 3.2. Proses Penggabungan (Tahap I - IX)
 
-Berikut adalah contoh tabel penggabungan hingga Tahap IV dan V (lanjutan):
+Berikut adalah contoh tabel penggabungan hingga Tahap I - IX (lanjutan):
 
-| Tahap | Subnet | Gabungan dari Subnet 1 | Netmask 1 | Gabungan dari Subnet 2 | Netmask 2 | **Netmask Akhir** |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **I** | B1 | A19 | /24 | A20 | /27 | **/23** |
-| **I** | B2 | A18 | /27 | A21 | /30 | **/26** |
-| **II** | C1 | B1 | /23 | B2 | /26 | **/22** |
-| **II** | C2 | B3 | /24 | A12 | /30 | **/23** |
-| **III** | D1 | C2 | /23 | A10 | /22 | **/21** |
-| **IV** | E1 | D2 | /20 | D3 | /20 | **/19** |
-| **V** | F1 | E1 | /19 | A9 | /30 | **/18** |
-| **IX** | **J1** | **I1** | **/15** | **D1** | **/21** | **/**14** |
-
+ ![tes](assets/penggabungan1.png)
+ ![tes](assets/penggabungan2.png)
 Hasil akhir dari CIDR Aggregation adalah **J1/14**, menunjukkan bahwa keseluruhan jaringan dapat diwakili oleh satu blok IP besar: **192.221.0.0/14**.
 
 ### 3.3. Visualisasi CIDR Aggregation Final
 
 Berikut adalah visualisasi topologi dengan *loop* yang menggambarkan batas-batas *supernet* hasil agregasi CIDR, mulai dari B1 hingga agregasi final J1/14:
 
-![Visualisasi CIDR Aggregation Final yang menunjukkan pengelompokan subnet ke dalam B1, C1, D1, E2, hingga J1/14.](cidr%20fix%20setelah%20diisi%20angka,%20fix%20bangett%20banget.jpg)
+![Visualisasi CIDR Aggregation Final yang menunjukkan pengelompokan subnet ke dalam B1, C1, D1, E2, hingga J1/14.](assets/subneting.png)
 
 ---
 
